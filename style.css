@@ -1,0 +1,61 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.xmas {
+  padding: 3em;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5em;
+  text-align: center;
+}
+
+.xmas_condition {
+  font-size: 2rem;
+}
+
+.xmas_title {
+  font-size: 2rem;
+}
+
+.xmas_info {
+  font-size: 1rem;
+}
+
+.xmas_title, .xmas_info {
+  color: gray;
+}
+
+.ifNotBlocked {
+  font-size: 12rem;
+}
+
+span.size::after {
+  content: 'PX';
+  font-size: 0.4em;
+}
+/*# sourceMappingURL=style.css.map */

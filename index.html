@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it Christmas?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <section class="xmas">
+        <h3 class="xmas_title">
+            Is it Christmas?
+        </h3>
+        <h1 class="xmas_condition">
+            Failed to fetch date because<br>JavaScript blocked by browser.
+        </h1>
+        <h2 class="xmas_info"></h2>
+    </section>
+
+
+
+    <script>
+        let date;
+        let h1;
+        fetch('http://worldtimeapi.org/api/ip')
+            .then(response => response.json())
+            .then(data => datetime = data.datetime)
+            .then(() => {
+                var date = datetime.slice(8, 10);
+                var month = datetime.slice(5, 7);
+                var year = datetime.slice(0, 4);
+                const today = new Date(`${month}/${date}/${year}`);
+                const nextChristmas = new Date(`12/25/${year}`);
+                const delta = Math.ceil(Math.abs(nextChristmas - today) / (1000 * 60 * 60 * 24));
+                if (delta == 0) {
+                    h1 = 'YES';
+                    h2 = `It's Christmas Day!`;
+                } else {
+                    h1 = 'NO';
+                    h2 = `${delta} days to go for Christmas`;
+                }
+                if (month == '12' && date > 25) {
+                    h2 = `But, it's Christmas week!`
+                }
+                document.querySelector('h1').innerText = h1;
+                document.querySelector('h2').innerText = h2;
+
+                document.querySelector('h1').classList.add('ifNotBlocked');
+            })
+
+
+    </script>
+</body>
+
+</html>

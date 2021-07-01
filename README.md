@@ -4,7 +4,7 @@
 * A simple web application that tells you in one word (YES/NO) whether it's Christmas day or not.
 * Build using plain HTML, SASS and vanilla JavaScript.
 * Mobile responsive.
-* Current date obtained from [World Time API](https://worldtimeapi.org/) as JSON.
+* Current date obtained using the Date object in JavaScript.
 
 ## Preview
 ![Preview](preview.png)

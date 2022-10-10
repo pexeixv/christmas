@@ -1,8 +1,8 @@
 async function injectValues() {
-    var today = new Date()
-    var month = today.getMonth()
-    var date = today.getDate()
-    var year = today.getFullYear()
+    const today = new Date()
+    const month = today.getMonth()
+    const date = today.getDate()
+    const year = today.getFullYear()
     const nextChristmas = new Date(`12/25/${year}`);
 
     const delta = Math.ceil(Math.abs(nextChristmas - today) / (1000 * 60 * 60 * 24))
@@ -14,7 +14,7 @@ async function injectValues() {
         h2 = `${delta} days to go for Christmas`
     }
     if (month == 11 && date > 25) {
-        console.log(1);
+
         h2 = `But, it's Christmas week!`
     }
     document.querySelector('h1').innerText = h1
@@ -23,6 +23,6 @@ async function injectValues() {
     document.querySelector('h1').classList.add('ifNotBlocked')
 }
 
-var h1, h2
+let h1, h2
 injectValues();
 
